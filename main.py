@@ -4,7 +4,7 @@ from test import test
 
 
 def euler():
-    p = p008
+    p = p001
     print(f'{p()}\n')
     # test(p)
     # test()

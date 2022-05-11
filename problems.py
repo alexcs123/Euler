@@ -1,5 +1,6 @@
 from math import prod, sqrt, comb, factorial
 from string import ascii_uppercase
+from sympy import n_order, multiplicity
 from data import *
 
 
@@ -224,6 +225,14 @@ def p025():
     while len(str(f[-1])) < 1000:
         f.append(f[-1] + f[-2])
     return len(f)
+
+
+def p026():
+    d, m = 0, 0
+    for c in range(2, 1000):
+        n = n_order(10, c // 2 ** multiplicity(2, c) // 5 ** multiplicity(5, c))
+        d, m = (c, n) if n > m else (d, m)
+    return d
 
 
 def p027():
